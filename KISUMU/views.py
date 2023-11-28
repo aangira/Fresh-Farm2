@@ -2,7 +2,7 @@
 
 from django.shortcuts import render
 def home(request):
-    return render(request,'home.html',  {'bike': 'home'})
+    return render(request,'index.html',  {'bike': 'home'})
 
 
 def viewdata(request):
