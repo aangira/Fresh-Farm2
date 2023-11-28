@@ -5,7 +5,7 @@ app_name='kisumu'
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('viewdata', views.team, name="team")
+    # path('viewdata', views.team, name="team")
 
 
 ]
