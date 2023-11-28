@@ -1,0 +1,47 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    <style>
+        .ones{
+            height:300px;
+            width:300px;
+            background-image: url("{% static 'images/background.JPG' %}")
+        }
+
+
+    </style>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+
+{# this is the django recommended way of routing #}
+
+<a class="{% if bike == 'home' %}two {% endif %}" href="{% url 'kisumu:home' %}">HOME</a>
+<a class="{% if bike == 'about' %}two {% endif %}" href="{% url 'kisumu:about' %}">ABOUT</a>
+<a class="{% if bike == 'contact' %}two {% endif %}" href="{% url 'kisumu:contact' %}">CONTACT</a>
+<a class="{% if bike == 'add' %}two {% endif %}" href="{% url 'kisumu:add' %}">ADD DATA</a>
+<a class="{% if bike == 'viewdata' %}two {% endif %}" href="{% url 'kisumu:viewdata' %}">VIEWDATA</a>
+<a class="{% if bike == 'team' %}two {% endif %}" href="{% url 'kisumu:team' %}">TEAM</a>
+
+
+
+
+{% block body %}
+
+
+
+{% endblock %}
+
+</body>
+</html>
