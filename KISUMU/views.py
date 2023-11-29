@@ -25,16 +25,20 @@ def contact(request):
     return render(request, 'contact.html', {'nav': 'contact'})
 
 
-def viewdata(request):
-    return render(request, 'team.html', {'nav': 'team'})
+def blog(request):
+    return render(request, 'blog.html', {'nav': 'blog'})
 
 
-def viewdata(request):
-    return render(request, 'team.html', {'nav': 'team'})
+def details(request):
+    return render(request, 'detail.html', {'nav': 'detail'})
 
 
-def viewdata(request):
-    return render(request, 'team.html', {'nav': 'team'})
+def features(request):
+    return render(request, 'feature.html', {'nav': 'feature'})
+
+
+def testimonials(request):
+    return render(request, 'testimonial.html', {'nav': 'testimonial'})
 
 
 
