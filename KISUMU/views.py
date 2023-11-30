@@ -1,9 +1,23 @@
 from django.shortcuts import render
+from .models import Services,Blog,Comment,ContactUs,Products,Team,Testmonial,OurLocation
 
 
 
 def home(request):
-    return render(request,'index.html',  {'bike': 'home'})
+    services = Services.objects.all()[:5]
+    products = Products.objects.all().order_by('?')
+    testimonials = Testmonial.objects.all()
+    team = Team.objects.all()[:3]
+    blogs = Blog.objects.all()[:3]
+    context = {
+        'nav': 'home',
+        'products' : products,
+        'testimonials' : testimonials,
+        'teams' : team,
+        'blogs' : blogs,
+        'services': services,
+    }
+    return render(request,'index.html',  context)
 
 
 def product(request):
@@ -14,6 +28,7 @@ def about(request):
 
 
 def services(request):
+    services = Services.objects.all().order_by('?')
     return render(request, 'service.html', {'nav': 'service'})
 
 

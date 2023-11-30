@@ -171,41 +171,16 @@
                     <p class="mb-4">Tempor erat elitr at rebum at at clita. Diam dolor diam ipsum et tempor sit. Clita erat ipsum et lorem et sit sed stet labore</p>
                     <a href="" class="btn btn-primary py-md-3 px-md-5">Contact Us</a>
                 </div>
+                {% for service in services %}
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item bg-light text-center p-5">
-                        <i class="fa fa-carrot display-1 text-primary mb-3"></i>
-                        <h4>Fresh Vegetables</h4>
-                        <p class="mb-0">Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
+                        <i class="fa fa-{{service.icon}} display-1 text-primary mb-3"></i>
+                        <h4>{{service.service}}</h4>
+                        <p class="mb-0">{{service.desc}}</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light text-center p-5">
-                        <i class="fa fa-apple-alt display-1 text-primary mb-3"></i>
-                        <h4>Fresh Fruits</h4>
-                        <p class="mb-0">Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light text-center p-5">
-                        <i class="fa fa-dog display-1 text-primary mb-3"></i>
-                        <h4>Healty Cattle</h4>
-                        <p class="mb-0">Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light text-center p-5">
-                        <i class="fa fa-tractor display-1 text-primary mb-3"></i>
-                        <h4>Modern Truck</h4>
-                        <p class="mb-0">Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light text-center p-5">
-                        <i class="fa fa-seedling display-1 text-primary mb-3"></i>
-                        <h4>Farming Plans</h4>
-                        <p class="mb-0">Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
-                    </div>
-                </div>
+                {% endfor %}
+                
             </div>
         </div>
     </div>
@@ -272,61 +247,20 @@
                 <h1 class="display-5">Our Fresh & Organic Products</h1>
             </div>
             <div class="owl-carousel product-carousel px-5">
+                {% for product in products %}
                 <div class="pb-5">
                     <div class="product-item position-relative bg-white d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="{% static 'images/product-1.png' %}" alt="">
-                        <h6 class="mb-3">Organic Vegetable</h6>
-                        <h5 class="text-primary mb-0">$19.00</h5>
+                        <img class="img-fluid mb-4" src="/media/{{ product.image }}" alt="">
+                        <h6 class="mb-3">{{product.name}}</h6>
+                        <h5 class="text-primary mb-0">KSH {{product.price}}</h5>
                         <div class="btn-action d-flex justify-content-center">
                             <a class="btn bg-primary py-2 px-3" href=""><i class="bi bi-cart text-white"></i></a>
                             <a class="btn bg-secondary py-2 px-3" href=""><i class="bi bi-eye text-white"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="pb-5">
-                    <div class="product-item position-relative bg-white d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="{% static 'images/product-2.png' %}" alt="">
-                        <h6 class="mb-3">Organic Vegetable</h6>
-                        <h5 class="text-primary mb-0">$19.00</h5>
-                        <div class="btn-action d-flex justify-content-center">
-                            <a class="btn bg-primary py-2 px-3" href=""><i class="bi bi-cart text-white"></i></a>
-                            <a class="btn bg-secondary py-2 px-3" href=""><i class="bi bi-eye text-white"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pb-5">
-                    <div class="product-item position-relative bg-white d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="{% static 'images/product-1.png' %}" alt="">
-                        <h6 class="mb-3">Organic Vegetable</h6>
-                        <h5 class="text-primary mb-0">$19.00</h5>
-                        <div class="btn-action d-flex justify-content-center">
-                            <a class="btn bg-primary py-2 px-3" href=""><i class="bi bi-cart text-white"></i></a>
-                            <a class="btn bg-secondary py-2 px-3" href=""><i class="bi bi-eye text-white"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pb-5">
-                    <div class="product-item position-relative bg-white d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="{% static 'images/product-2.png' %}" alt="">
-                        <h6 class="mb-3">Organic Vegetable</h6>
-                        <h5 class="text-primary mb-0">$19.00</h5>
-                        <div class="btn-action d-flex justify-content-center">
-                            <a class="btn bg-primary py-2 px-3" href=""><i class="bi bi-cart text-white"></i></a>
-                            <a class="btn bg-secondary py-2 px-3" href=""><i class="bi bi-eye text-white"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pb-5">
-                    <div class="product-item position-relative bg-white d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="{% static 'images/product-1.png' %}" alt="">
-                        <h6 class="mb-3">Organic Vegetable</h6>
-                        <h5 class="text-primary mb-0">$19.00</h5>
-                        <div class="btn-action d-flex justify-content-center">
-                            <a class="btn bg-primary py-2 px-3" href=""><i class="bi bi-cart text-white"></i></a>
-                            <a class="btn bg-secondary py-2 px-3" href=""><i class="bi bi-eye text-white"></i></a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+                
             </div>
         </div>
     </div>
@@ -339,18 +273,14 @@
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <div class="owl-carousel testimonial-carousel p-5">
+                        {% for testimonial in testimonials %}
                         <div class="testimonial-item text-center text-white">
-                            <img class="img-fluid mx-auto p-2 border border-5 border-secondary rounded-circle mb-4" src="{% static 'images/testimonial-1.jpg' %}" alt="">
-                            <p class="fs-5">Dolores sed duo clita justo dolor et stet lorem kasd dolore lorem ipsum. At lorem lorem magna ut et, nonumy labore diam erat. Erat dolor rebum sit ipsum.</p>
+                            <img class="img-fluid mx-auto p-2 border border-5 border-secondary rounded-circle mb-4" src="/media/{{ testimonial.image }}" alt="">
+                            <p class="fs-5">{{testimonial.desc}}</p>
                             <hr class="mx-auto w-25">
-                            <h4 class="text-white mb-0">Client Name</h4>
+                            <h4 class="text-white mb-0">{{testimonial.client_name}}</h4>
                         </div>
-                        <div class="testimonial-item text-center text-white">
-                            <img class="img-fluid mx-auto p-2 border border-5 border-secondary rounded-circle mb-4" src="{% static 'images/testimonial-2.jpg' %}" alt="">
-                            <p class="fs-5">Dolores sed duo clita justo dolor et stet lorem kasd dolore lorem ipsum. At lorem lorem magna ut et, nonumy labore diam erat. Erat dolor rebum sit ipsum.</p>
-                            <hr class="mx-auto w-25">
-                            <h4 class="text-white mb-0">Client Name</h4>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -367,14 +297,15 @@
                 <h1 class="display-5">We Are Professional Organic Farmers</h1>
             </div>
             <div class="row g-5">
+                {% for team in teams %}
                 <div class="col-lg-4 col-md-6">
                     <div class="row g-0">
                         <div class="col-10">
                             <div class="position-relative">
-                                <img class="img-fluid w-100" src="{% static 'images/team-1.jpg' %}" alt="">
+                                <img class="img-fluid w-100" src="/media/{{ team.image }}" alt="">
                                 <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4" style="background: rgba(52, 173, 84, .85);">
-                                    <h4 class="text-white">Farmer Name</h4>
-                                    <span class="text-white">Designation</span>
+                                    <h4 class="text-white">{{team.farmer_name}}</h4>
+                                    <span class="text-white">{{team.desgination}}</span>
                                 </div>
                             </div>
                         </div>
@@ -388,48 +319,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="row g-0">
-                        <div class="col-10">
-                            <div class="position-relative">
-                                <img class="img-fluid w-100" src="{% static 'images/team-2.jpg' %}" alt="">
-                                <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4" style="background: rgba(52, 173, 84, .85);">
-                                    <h4 class="text-white">Farmer Name</h4>
-                                    <span class="text-white">Designation</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="h-100 d-flex flex-column align-items-center justify-content-around bg-secondary py-5">
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-twitter text-secondary"></i></a>
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-facebook-f text-secondary"></i></a>
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-linkedin-in text-secondary"></i></a>
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-instagram text-secondary"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="row g-0">
-                        <div class="col-10">
-                            <div class="position-relative">
-                                <img class="img-fluid w-100" src="{% static 'images/team-3.jpg' %}" alt="">
-                                <div class="position-absolute start-0 bottom-0 w-100 py-3 px-4" style="background: rgba(52, 173, 84, .85);">
-                                    <h4 class="text-white">Farmer Name</h4>
-                                    <span class="text-white">Designation</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="h-100 d-flex flex-column align-items-center justify-content-around bg-secondary py-5">
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-twitter text-secondary"></i></a>
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-facebook-f text-secondary"></i></a>
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-linkedin-in text-secondary"></i></a>
-                                <a class="btn btn-square rounded-circle bg-white" href="#"><i class="fab fa-instagram text-secondary"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+                
             </div>
         </div>
     </div>
@@ -444,33 +335,18 @@
                 <h1 class="display-5">Latest Articles From Our Blog Post</h1>
             </div>
             <div class="row g-5">
+                {% for blog in blogs %}
                 <div class="col-lg-4">
                     <div class="blog-item position-relative overflow-hidden">
-                        <img class="img-fluid" src="{% static 'images/blog-1.jpg' %}" alt="">
+                        <img class="img-fluid" src="/media/{{ blog.image }}" alt="">
                         <a class="blog-overlay" href="">
-                            <h4 class="text-white">Lorem elitr magna stet eirmod labore amet</h4>
-                            <span class="text-white fw-bold">Jan 01, 2050</span>
+                            <h4 class="text-white">{{blog.title}}</h4>
+                            <span class="text-white fw-bold">{{blog.date_posted|date}}</span>
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="blog-item position-relative overflow-hidden">
-                        <img class="img-fluid" src="{% static 'images/blog-2.jpg' %}" alt="">
-                        <a class="blog-overlay" href="">
-                            <h4 class="text-white">Lorem elitr magna stet eirmod labore amet</h4>
-                            <span class="text-white fw-bold">Jan 01, 2050</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-item position-relative overflow-hidden">
-                        <img class="img-fluid" src="{% static 'images/blog-3.jpg' %}" alt="">
-                        <a class="blog-overlay" href="">
-                            <h4 class="text-white">Lorem elitr magna stet eirmod labore amet</h4>
-                            <span class="text-white fw-bold">Jan 01, 2050</span>
-                        </a>
-                    </div>
-                </div>
+                {% endfor %}
+                
             </div>
         </div>
     </div>

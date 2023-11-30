@@ -9,7 +9,7 @@ class Services(models.Model):
         return self.service
     
     
-class Products(models.Models):
+class Products(models.Model):
     name = models.CharField( max_length=50)
     price = models.PositiveIntegerField()
     image = models.ImageField(upload_to='products')
@@ -24,7 +24,7 @@ class Blog(models.Model):
     desc = models.TextField()
     
     def __str__(self):
-        return self.title[:10]
+        return self.title[:10]+"..."
     
     
 class Comment(models.Model):
