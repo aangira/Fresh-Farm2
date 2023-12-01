@@ -24,12 +24,16 @@ def product(request):
     return render(request, 'product.html', {'nav': 'product'})
 
 def about(request):
-    return render(request, 'about.html', {'nav': 'about'})
+    team = Team.objects.all().order_by('?')
+    context = {'nav': 'about','teams':team}
+    return render(request, 'about.html', context)
 
 
 def services(request):
     services = Services.objects.all().order_by('?')
-    return render(request, 'service.html', {'nav': 'service'})
+    testimonials = Testmonial.objects.all()
+    context = {'nav': 'service','services':services,'testimonials' : testimonials,}
+    return render(request, 'service.html', context )
 
 
 def team(request):
@@ -37,11 +41,18 @@ def team(request):
 
 
 def contact(request):
-    return render(request, 'contact.html', {'nav': 'contact'})
+    location = OurLocation.objects.all()
+    context = {'nav': 'contact','locations':location}
+    return render(request, 'contact.html', context )
 
 
 def blog(request):
-    return render(request, 'blog.html', {'nav': 'blog'})
+    blogs = Blog.objects.all()
+    context = {
+        'nav': 'blog',
+        'blogs':blogs
+    }
+    return render(request, 'blog.html', context)
 
 
 def details(request):
